@@ -1,5 +1,14 @@
+// Selecting inputs
+const titleInput = document.querySelector('#titleInput');
+const authorInput = document.querySelector('#author');
+const numberOfPagesInput = document.querySelector('#noPages');
+const datePublishedInput = document.querySelector('#yearPublished');
+const readInput = document.querySelector('#read');
+
 let myBooks = [];
 
+
+//Book constructor
 function Book(title, author, numberOfPages, datePublished, read) {
     this.title = title;
     this.author = author;
@@ -9,22 +18,8 @@ function Book(title, author, numberOfPages, datePublished, read) {
 }
 
 function addBookToLibrary() {
-    
-    const titleInput = document.querySelector('#titleInput');
-    console.log(titleInput.value);
-    const authorInput = document.querySelector('#author');
-    console.log(authorInput.value);
-    const numberOfPagesInput = document.querySelector('#noPages');
-    console.log(numberOfPagesInput.value);
-    const datePublishedInput = document.querySelector('#yearPublished');
-    console.log(datePublishedInput.value);
-    const readInput = document.querySelector('#read');
-    console.log(readInput.checked);
-
     const inputBook = new Book(titleInput.value, authorInput.value, numberOfPagesInput.value, datePublishedInput.value, readInput.checked);
-    console.log(inputBook);
     myBooks.push(inputBook);
-    console.log(myBooks);
     createBooksCard(titleInput.value, authorInput.value, numberOfPagesInput.value, datePublishedInput.value, readInput.checked);
 }
 
@@ -34,6 +29,7 @@ const form = document.querySelector('#addBookForm');
 form.addEventListener('submit', function(e){
     e.preventDefault();
     addBookToLibrary();
+    resetForm();
 });
 
 function createBooksCard(title, author, pages, datePublished, read) {
@@ -63,4 +59,12 @@ function createBooksCard(title, author, pages, datePublished, read) {
     divCard.append(titleParagraph, authorParagraph, pagesParagraph, readParagraph);
 
     bookShelf.appendChild(divCard);
+}
+
+function resetForm() {
+    titleInput.value = "";
+    authorInput.value = "";
+    numberOfPagesInput.value = "";
+    datePublishedInput.value = "";
+    readInput.checked = false;
 }
