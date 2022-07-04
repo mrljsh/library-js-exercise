@@ -25,7 +25,10 @@ function addBookToLibrary() {
     console.log(inputBook);
     myBooks.push(inputBook);
     console.log(myBooks);
+    createBooksCard(titleInput.value, authorInput.value, numberOfPagesInput.value, datePublishedInput.value, readInput.checked);
 }
+
+const bookShelf = document.querySelector('.books-shelf');
 
 const form = document.querySelector('#addBookForm');
 form.addEventListener('submit', function(e){
@@ -33,7 +36,31 @@ form.addEventListener('submit', function(e){
     addBookToLibrary();
 });
 
-function createBooksCard() {
-    const bookShelf = document.querySelector('.books-shelf');
+function createBooksCard(title, author, pages, datePublished, read) {
     const divCard = document.createElement('div');
+    const titleParagraph = document.createElement('p');
+    const authorParagraph = document.createElement('p');
+    const pagesParagraph = document.createElement('p');
+    const readParagraph = document.createElement('p');
+
+    divCard.classList.add('book-card');
+    titleParagraph.classList.add('title'); 
+    authorParagraph.classList.add('author');
+    pagesParagraph.classList.add('pages');
+    readParagraph.classList.add('read');
+    if(read == false){
+        readParagraph.classList.add('not');
+    }
+
+    titleParagraph.textContent = title;
+    authorParagraph.textContent = `by ${author}, ${datePublished}`;
+    pagesParagraph.textContent = `${pages} pages`;
+    readParagraph.textContent = "Read"
+    if(read == false){
+        readParagraph.innerHTML = "Not read yet"
+    }
+
+    divCard.append(titleParagraph, authorParagraph, pagesParagraph, readParagraph);
+
+    bookShelf.appendChild(divCard);
 }
