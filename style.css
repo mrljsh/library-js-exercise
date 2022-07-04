@@ -6,6 +6,9 @@
     --red: #ff7070;
     --light-green: #9fff9c;
     --light-red: #ff9c9c;
+    --blue-400: #60A5FA;
+    --blue-500: #3B82F6;
+    --blue-600: #2563EB;
 }
 
 
@@ -47,6 +50,7 @@ main {
 }
 
 .add-books-form {
+    height: fit-content;
     padding: 16px;
     border-radius: 8px;
     background-color: var(--white);
@@ -88,13 +92,59 @@ main {
     padding: 12px;
     margin: 8px 0px;
     width: 100%;
-    background-color: var(--grey);
+    background-color: var(--blue-600);
     border: 1px solid #ccc;
+    color: var(--white);
     border-radius: 8px;
     font-size: 16px;
     transition: 0.3s ease-in-out;
 }
 
 #addBookBtn:hover {
-    filter: brightness(0.8);
+    background-color: var(--blue-500);
+    transition: 0.2s ease-out;
+    cursor: pointer;
+}
+
+.books {
+    padding: 8px;
+}
+
+.books > p {
+    margin-bottom: 16px;
+    font-size: 24px;
+    font-weight: 400;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.books-shelf {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 450px);
+    gap: 24px;
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+    background-color: var(--white);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.book-card > .title {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 8px 0;
+}
+
+.book-card > .author {
+    font-style: italic;
+    font-size: 18px;
+    color: #050505;
+}
+
+.book-card > .pages {
+    margin: 16px 0px;
 }

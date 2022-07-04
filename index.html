@@ -15,18 +15,34 @@
     <main>
         <div class="books">
             <p>Your books on shelf</p>
+            <div class="books-shelf">
+                <div class="book-card">
+                    <p class="title">Game of Thrones Game of Thrones Game of Thrones</p>
+                    <p class="author">by George R.R. Martin</p>
+                    <p class="pages">993 pages</p>
+                </div>
+                <div class="book-card">
+                    <p>Test</p>
+                </div>
+                <div class="book-card">
+                    <p>Test</p>
+                </div>
+                <div class="book-card">
+                    <p>Test</p>
+                </div>
+            </div>
         </div>
         <div class="add-books-form">
             <p>Add new book</p>
             <hr>
             <label for="title">Title</label>
-            <input type="text" name="title" id="title" required>
+            <input type="text" name="title" id="title" value="" required>
             <label for="author">Author</label>
-            <input type="text" name="author" id="author" required>
+            <input type="text" name="author" id="author" value="" required>
             <label for="noPages">Number of pages</label>
-            <input type="number" name="noPages" id="noPages" required>
+            <input type="number" name="noPages" id="noPages" value="" required>
             <label for="yearPublished">Year published</label>
-            <input type="number" min="1800" max="2022" step="1" placeholder="2022" required>
+            <input type="number" min="1800" max="2022" step="1" value="2022" placeholder="2022" required>
             <label for="read">Did you read?</label>
             <input type="checkbox" name="read" id="read">
             <button id="addBookBtn">Add book</button>
