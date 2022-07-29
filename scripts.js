@@ -11,13 +11,24 @@ const bookShelf = document.querySelector('.books-shelf');
 
 
 //Book constructor
-function Book(title, author, numberOfPages, datePublished, read) {
-    this.title = title;
-    this.author = author;
-    this.numberOfPages = numberOfPages;
-    this.datePublished = datePublished;
-    this.read = Boolean(read);
-}
+// function Book(title, author, numberOfPages, datePublished, read) {
+//     this.title = title;
+//     this.author = author;
+//     this.numberOfPages = numberOfPages;
+//     this.datePublished = datePublished;
+//     this.read = Boolean(read);
+// }
+
+class Book {
+    constructor(title, author, numberOfPages, datePublished, read){
+        this.title = title;
+        this.author = author;
+        this.numberOfPages = numberOfPages;
+        this.datePublished = datePublished;
+        this.read = Boolean(read);
+    }
+};
+
 
 const TwelveRules = new Book("12 Rules for Life", "Jordan B. Peterson", "309", "2018", true);
 const Dostoevsky = new Book("Notes from Underground", "Fyodor Dostoevsky", "136", "1864", false);
