@@ -11,14 +11,6 @@ const bookShelf = document.querySelector('.books-shelf');
 
 
 //Book constructor
-// function Book(title, author, numberOfPages, datePublished, read) {
-//     this.title = title;
-//     this.author = author;
-//     this.numberOfPages = numberOfPages;
-//     this.datePublished = datePublished;
-//     this.read = Boolean(read);
-// }
-
 class Book {
     constructor(title, author, numberOfPages, datePublished, read){
         this.title = title;
